@@ -5,10 +5,10 @@ import sessions from "express-session";
 import cookieParser from "cookie-parser";
 import {checkIfAuthenticated} from "./controllers/authentication.js";
 import authRouter from './router/auth.js';
+import express from 'express'
+import config from "./config.json" with { type: "json" };
 
 
-const express = require('express');
-const config = require('./config.json')
 const fs = require('fs').promises;
 const http = require("http");
 

@@ -1,4 +1,3 @@
-import { express } from 'express';
 import {query} from '../functions/database.js'
 import express from 'express'
 import {validatePassword,hashPassword} from '../functions/passValidation.js'

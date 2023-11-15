@@ -1,5 +1,5 @@
 import mysql  from 'mysql2/promise';
-const config = require("../config.json")
+import config from "../config.json" with { type: "json" };
 
 export async function query(sql, params) {
     try{
