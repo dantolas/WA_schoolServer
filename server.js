@@ -3,18 +3,21 @@
 // ##########
 import sessions from "express-session";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 import {checkIfAuthenticated} from "./controllers/authentication.js";
+import {rootIndexResponse} from "./controllers/rootIndexResponse.js"
 import authRouter from './router/auth.js';
 import express from 'express'
-import config from "./config.json" with { type: "json" };
+import config from "./config.js"; 
+import path, {dirname} from 'path';
+import { fileURLToPath } from "url";
 
-
-const fs = require('fs').promises;
-const http = require("http");
+   
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const host = config.server.hostname;
 const port = config.server.port;
-const path = require('path');
 
 // Create server (app)
 const server = express();
